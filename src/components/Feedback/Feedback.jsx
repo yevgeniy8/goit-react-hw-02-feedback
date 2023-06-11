@@ -39,6 +39,7 @@ class Feedback extends React.Component {
                         </button>
                     );
                 })}
+
                 <p>Statistics</p>
                 <div>
                     <p>Good: {this.state.good}</p>
