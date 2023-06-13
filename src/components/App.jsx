@@ -4,6 +4,8 @@ import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
 import Notification from './Notification/Notification';
 
+import css from './App.module.css';
+
 export class App extends React.Component {
     state = {
         good: 0,
@@ -30,24 +32,15 @@ export class App extends React.Component {
 
     render() {
         return (
-            <div
-            // style={{
-            //     height: '100vh',
-            //     display: 'flex',
-            //     justifyContent: 'center',
-            //     alignItems: 'center',
-            //     fontSize: 40,
-            //     color: '#010101',
-            // }}
-            >
-                <Section title="Statistics">
+            <div className={css.wrapper}>
+                <Section title="Please leave feedback">
                     <FeedbackOptions
                         options={['good', 'neutral', 'bad']}
                         onLeaveFeedback={this.handleChangeFeedback}
                     />
                 </Section>
 
-                <Section title="Please leave feedback">
+                <Section title="Statistics">
                     {this.countTotalFeedback() ? (
                         <Statistics
                             good={this.state.good}
